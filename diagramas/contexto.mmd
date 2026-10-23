@@ -1,0 +1,33 @@
+```mermaid
+C4Context
+    title Diagrama de Contexto - API de Pagos del Banco Digital
+    
+    Person(usuario, "Usuario", "Cliente del banco digital")
+    Person(soporte, "Soporte Técnico", "Equipo de soporte del banco")
+    System_Boundary(c1, "Banco Digital") {
+        System(apiPagos, "API de Pagos", "Procesa transacciones en tiempo real")
+        System(sistemaAutorizacion, "Sistema de Autorización", "Valida permisos y roles")
+        System(monitorizacion, "Sistema de Monitorización", "Supervisa transacciones y alertas")
+    }
+    
+    System_Ext(proveedorServicios, "Proveedor de Servicios Externos", "Procesador de pagos tercerizado")
+    System_Ext(redInterbancaria, "Red Interbancaria", "Facilita transferencias entre bancos")
+    
+    Rel(usuario, apiPagos, "Realiza transacciones", "HTTPS")
+    Rel(soporte, monitorizacion, "Supervisa alertas", "HTTPS")
+    Rel(apiPagos, sistemaAutorizacion, "Valida permisos", "gRPC")
+    Rel(apiPagos, proveedorServicios, "Procesa pagos", "REST")
+    Rel(apiPagos, redInterbancaria, "Transferencias", "SOAP")
+    Rel(monitorizacion, apiPagos, "Monitorea transacciones", "Prometheus")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+```
+
+---
+
+> **Preguntas guía para completar el diagrama:**
+> 1. ¿Qué otros actores externos interactúan con la API de pagos? Ejemplos: auditoría externa, proveedores de identidad.
+> 2. ¿Qué protocolos de comunicación se utilizan en cada frontera? ¿Son seguros?
+> 3. ¿Existen relaciones de confianza implícitas entre sistemas que deban documentarse?
+> 4. ¿Cómo afectaría un ataque de suplantación (Spoofing) en cada una de estas relaciones?
+> 5. ¿Qué medidas de protección existen actualmente en cada frontera?

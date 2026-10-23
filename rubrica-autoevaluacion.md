@@ -1,0 +1,17 @@
+# Rúbrica de Autoevaluación: Modelado de Amenazas STRIDE para API de Pagos
+
+| Criterio                                      | Excelente (5)                                                                 | Aceptable (3)                                                                | Insuficiente (1)                                                          |
+|-----------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| **Alineación con OWASP Top 10**               | Todos los riesgos identificados están mapeados a OWASP Top 10 con ejemplos concretos y métricas cuantificables (ej. "A1: Broken Access Control → 3 vectores identificados"). | Riesgos mapeados a OWASP Top 10 sin ejemplos concretos o métricas.          | No hay mapeo claro a OWASP Top 10 o los riesgos identificados son genéricos. |
+| **Uso de STRIDE**                             | Cada categoría de STRIDE (Spoofing, Tampering, Repudiation, Information Disclosure, DoS, Elevation of Privilege) tiene al menos 2 vectores de amenaza detallados con datos del dominio (ej. "Tampering: Modificación de payloads JWT en tránsito"). | Categorías de STRIDE cubiertas pero con ejemplos genéricos o sin datos del dominio. | Menos de 4 categorías de STRIDE cubiertas o ejemplos irrelevantes.        |
+| **Calidad de los ADRs**                       | ADRs completos con contexto, fuerzas, opciones consideradas (mínimo 3 por ADR), decisión justificada con criterios medibles y consecuencias detalladas. | ADRs con contexto y fuerzas, pero opciones consideradas o decisión incompletas. | ADRs incompletos (falta contexto, fuerzas o decisión).                   |
+| **Viabilidad del Plan de Gestión de Riesgos** | Plan incluye pasos concretos para incidentes (ej. "Aislar nodo comprometido en <5 minutos"), métricas de monitoreo (ej. "Alertas en tiempo real para intentos de DoS") y responsabilidades claras. | Plan con pasos genéricos o sin métricas de monitoreo.                      | Plan inexistente o con pasos irrelevantes para el dominio.                |
+| **Uso de Herramientas y Patrones**           | Herramientas seleccionadas (WAF, cifrado, firmas) están justificadas frente a los ASRs y alineadas con estándares (ej. "WAF para mitigar A3: Injection"). Diagramas C4 muestran contratos en fronteras. | Herramientas mencionadas pero sin justificación clara frente a los ASRs.   | Herramientas seleccionadas no alineadas con OWASP Top 10 o STRIDE.         |
+| **Diagramas y Documentación**                | Diagramas C4 (Mermaid) completos con actores, sistemas externos, contratos en fronteras (ej. "API REST + JWT") y justificación textual clara. Documentación técnica detallada. | Diagramas presentes pero con errores o falta de detalles en contratos.     | Diagramas ausentes o irrelevantes para el modelo de amenazas.            |
+
+### Instrucciones para la Autoevaluación:
+1. **Excelente**: Cumple TODOS los criterios de la columna con ejemplos concretos y métricas.
+2. **Aceptable**: Cumple la mayoría de criterios, pero con lagunas en ejemplos o métricas.
+3. **Insuficiente**: No cumple con los criterios mínimos o los ejemplos son irrelevantes.
+
+> **Nota**: Esta rúbrica evalúa la calidad técnica y la alineación con los estándares de seguridad. Los entregables deben ser autoexplicativos y justificados con datos del dominio.
